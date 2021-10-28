@@ -1,12 +1,7 @@
 from parsers.Otomoto import Otomoto
+from config import otomoto_uri, otomoto_params
 
-uri = 'https://www.otomoto.pl/osobowe/renault/master/od-2016/'
-params = {
-    'search[order]': 'created_at_first:desc',
-    'search[filter_float_price:to]': 50000
-}
-
-otomoto = Otomoto(uri, params)
+otomoto = Otomoto(otomoto_uri, otomoto_params)
 
 if __name__ == '__main__':
     new_cars = otomoto.get_new_cars()
